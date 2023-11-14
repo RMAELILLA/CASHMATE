@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CashMate | User Profile</title>
     <link rel="stylesheet" href="style.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -19,32 +19,33 @@
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
                         <a class="list-group-item list-group-item-action active" data-toggle="list"
-                            href="#account-general">General</a>                       
+                            href="#account-general">Username</a>
+                        <!-- Removed the "Edit User Profile" link -->
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-settings">Edit User Profile</a>    
+                            href="#upload-photo">Upload Profile Photo</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-policy">Get Help</a>                
+                            href="#account-policy">Get Help</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-policy">Privacy Policy</a>	
-						<a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-policy">Sign out</a>	
+                            href="#account-policy">Privacy Policy</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-policy">Sign out</a>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="account-general">
                             <div class="card-body media align-items-center">
-                                <img src="https://i.pinimg.com/736x/df/84/6a/df846a9ff0ea6767854215ee6605cf70.jpg" 
-                                    class="d-block ui-w-80">
+                                <!-- Removed the photo -->
                                 <div class="media-body ml-4">
-                                     &nbsp;                                                                       
+                                    &nbsp;
                                 </div>
                             </div>
                             <hr class="border-light m-0">
                             <div class="card-body">
+                                <!-- New "Upload Profile Photo" section -->
                                 <div class="form-group">
-                                    <label class="form-label">Username</label>
-                                    <p><b>Vinz Ibay</b></p>
+                                    <label class="form-label">Upload Profile Photo</label>
+                                    <input type="file" name="profile-photo">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Name</label>
@@ -53,10 +54,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">E-mail Address</label>
-                                    <p><b>Vinz123@gmail.com</b></p>
-                                    <button type="button">Edit</button>                                 
+                                    <p id="email"><b>username@example.com</b></p>
+                                    <button type="button">Edit</button>
                                 </div>
-								<div class="form-group">
+                                <div class="form-group">
                                     <label class="form-label">Password</label>
                                     <p><b>********</b></p>
                                     <button type="button">Update</button>
@@ -65,14 +66,22 @@
                                     <label class="form-label">Delete Account</label>
                                     <button type="button">Delete</button>
                                 </div>
-
                             </div>
-                        </div>                                                                               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
+        // Assuming you have a JavaScript variable 'username' and 'email'
+        var email = "username@example.com"; // Replace "username@example.com" with your actual email variable
 
+        // Update the content of the 'email' element
+        document.getElementById("email").innerHTML = '<b>' + email + '</b>';
     </script>
 </body>
 
