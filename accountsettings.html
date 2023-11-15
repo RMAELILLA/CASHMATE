@@ -30,8 +30,16 @@
             padding: 20px;
         }
 
+        .username-info-description{
+            display: flex;
+        }
+
+        .username-pic {
+            display: flex;
+        }
+        
         .username-info {
-            padding: 10px;
+            padding: 12px;
         }
 
         .username-label {
@@ -159,9 +167,13 @@
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                     <div class="username-info">
-                        <img src="profile photo icon.png" height="70" width="70">
-                        <label class="username-label"><b>Username</b></label>
-                        <p id="email"><b>username@example.com</b></p>
+                        <div class="username-pic">
+                            <img src="profile photo icon.png" height="70" width="70">
+                            <div>
+                                <span class="username-label"><b>Username</b></span>
+                                <label id="email"><b>username@example.com</b></label>
+                            </div>
+                        </div>
                     </div>
                     <div class="list-group list-group-flush account-settings-links">
                         <a class="list-group-item list-group-item-action active" data-toggle="list"
