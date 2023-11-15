@@ -11,4 +11,5 @@ expected OUTPUT
 run "accountsettings.html"
 
 expected OUTPUT
-![image](https://github.com/RMAELILLA/CASHMATE/assets/129654335/1a32815d-326b-483f-ba97-59a2a2c565b6)
+![image](https://github.com/RMAELILLA/CASHMATE/assets/129654335/5608d954-28bb-4672-84fe-bd06fbf673a4)
+
