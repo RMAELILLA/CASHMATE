@@ -30,14 +30,19 @@
         margin: 10px;
     }
 
-    .username-info-description{
+    .username-info-description {
         display: flex;
     }
 
     .username-pic {
         display: flex;
+        align-items: center; /* Align items vertically in the flex container */
     }
-        
+
+    .user {
+        margin-left: 15px; /* Adjust the margin as needed */
+    }
+
     .username-info {
         padding: 12px;
     }
@@ -53,6 +58,33 @@
         border: 1;
         border-top: 2px solid #000;
         margin: 5px auto;
+    }
+    
+    .account-settings-links {
+        background-color: #f8f9fa;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-group-item {
+        cursor: pointer;
+        border: none;
+    }
+
+    .list-group-item.active {
+        background-color: #6ABA8C;
+        color: #fff;
+    }
+
+    label[for="profile-photo"] {
+        background-color: #6ABA8C;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
     }
 
     button {
@@ -146,11 +178,72 @@
     </div>
 
     <script>
-        // JavaScript to toggle visibility of Section 2
-        document.querySelector('.account-settings-btn').addEventListener('click', function() {
-            document.querySelector('.section2').style.display = 'block';
+        document.addEventListener('DOMContentLoaded', function () {
+            // Update Profile Photo
+            document.querySelector('input[name="profile-photo"]').addEventListener('change', function (event) {
+                const fileInput = event.target;
+                const profilePhoto = document.querySelector('.username-pic img');
+    
+                if (fileInput.files && fileInput.files[0]) {
+                    const reader = new FileReader();
+    
+                    reader.onload = function (e) {
+                        profilePhoto.src = e.target.result;
+                    };
+    
+                    reader.readAsDataURL(fileInput.files[0]);
+                }
+            });
+    
+            // Edit Name and Email
+            document.querySelector('#edit-name-btn').addEventListener('click', function () {
+                const nameField = document.querySelector('#name');
+                const newName = prompt('Enter new name:', nameField.textContent.trim());
+    
+                if (newName !== null && newName !== '') {
+                    nameField.textContent = newName;
+                }
+            });
+    
+            document.querySelector('#edit-email-btn').addEventListener('click', function () {
+                const emailField = document.querySelector('#email');
+                const newEmail = prompt('Enter new email:', emailField.textContent.trim());
+    
+                if (newEmail !== null && newEmail !== '') {
+                    emailField.textContent = newEmail;
+                }
+            });
+    
+            // Update Password
+            document.querySelector('#update-password-btn').addEventListener('click', function () {
+                const currentPassword = prompt('Enter current password:');
+                // Simulate password update on the server (replace with actual server-side logic)
+                if (currentPassword !== null && currentPassword !== '') {
+                    alert('Password updated successfully!');
+                } else {
+                    alert('Password update failed. Please enter the correct current password.');
+                }
+            });
+    
+            // Delete Account
+            document.querySelector('#delete-account-btn').addEventListener('click', function () {
+                const confirmDelete = confirm('Are you sure you want to delete your account?');
+    
+                if (confirmDelete) {
+                    // Simulate account deletion on the server (replace with actual server-side logic)
+                    alert('Account deleted successfully!');
+                }
+            });
+    
+            // Sign Out
+            document.querySelector('#sign-out-btn').addEventListener('click', function () {
+                // Simulate sign out (replace with actual sign-out logic)
+                alert('Signed out successfully!');
+            });
         });
     </script>
+    
+    
 
 </body>
 </html>
