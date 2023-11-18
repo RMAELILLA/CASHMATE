@@ -19,14 +19,24 @@
     .container {
         display: flex;
         border: 0;
-        margin-top: 50px;
-        padding: 50px;
+        margin-top: 10%;
+        padding: 10%;
     }
 
-    .section1, .section2 {
+    .section1 {
         border: 2px groove #ccc;
         background-color: #fff;
+        border-radius: 10px;
         padding: 20px;
+        margin: 10px;
+    }
+
+    .section2 {
+        border: 2px groove #ccc;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 100%;
+        padding: 10px;
         margin: 10px;
     }
 
@@ -40,7 +50,7 @@
     }
 
     .user {
-        margin-left: 15px; /* Adjust the margin as needed */
+        margin-left: 5%; /* Adjust the margin as needed */
     }
 
     .username-info {
@@ -48,7 +58,7 @@
     }
 
     .username-label {
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 500;
     }
 
@@ -57,13 +67,12 @@
         width: 100%;
         border: 1;
         border-top: 2px solid #000;
-        margin: 5px auto;
+        margin: auto;
     }
     
     .account-settings-links {
         background-color: #f8f9fa;
         border: none;
-        border-radius: 5px;
         display: flex;
         flex-direction: column;
     }
@@ -78,20 +87,28 @@
         color: #fff;
     }
 
-    label[for="profile-photo"] {
+    .form-group input[type="file"] {
+        display: none; /* Hide the default file input */
+    }
+
+    .label-upload-photo {
         background-color: #6ABA8C;
         color: #fff;
-        padding: 5px 10px;
-        border: none;
-        border-radius: 15px;
+        padding: 8px 16px;
+        border-radius: 4px;
         cursor: pointer;
+        display: inline-block;
+    }
+
+    .label-upload-photo:hover {
+        background-color: #5e9665;
     }
 
     button {
         background-color: #6ABA8C;
         color: #fff;
         width: 100%;
-        max-width: 15%;
+        max-width: 20%;
         padding: 5px 10px;
         border: none;
         border-radius: 3px;
@@ -178,22 +195,34 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
             // Update Profile Photo
-            document.querySelector('input[name="profile-photo"]').addEventListener('change', function (event) {
-                const fileInput = event.target;
-                const profilePhoto = document.querySelector('.username-pic img');
-    
-                if (fileInput.files && fileInput.files[0]) {
-                    const reader = new FileReader();
-    
-                    reader.onload = function (e) {
-                        profilePhoto.src = e.target.result;
-                    };
-    
-                    reader.readAsDataURL(fileInput.files[0]);
-                }
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.querySelector('input[name="profile-photo"]');
+        const labelUploadPhoto = document.querySelector('.label-upload-photo');
+        const profilePhoto = document.querySelector('.username-pic img');
+
+        // Update Profile Photo
+        fileInput.addEventListener('change', function (event) {
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    profilePhoto.src = e.target.result;
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+
+                // Update label text when a file is selected
+                labelUploadPhoto.textContent = 'Change Profile Photo';
+            }
+        });
+
+        // Reset label text when the file input is cleared
+        fileInput.addEventListener('click', function () {
+            this.value = null;
+            labelUploadPhoto.textContent = 'Update Profile Photo';
+        });
+
     
             // Edit Name and Email
             document.querySelector('#edit-name-btn').addEventListener('click', function () {
