@@ -1,162 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CashMate | User Profile</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
     <style>
-        /* Custom CSS for left and right borders */
-        body {
-            font-family: 'Arial', sans-serif;
+    body {
+        font-family: 'Lexend', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: rgb(245, 245, 245);
+        background: linear-gradient(176deg, rgba(245, 245, 245, 1) 0%, rgba(102, 160, 144, 1) 94%);
         }
 
-        .container-p-y {
-            border: 1px solid #ccc; /* Border color for both left and right sides */
-            border-radius: 5px;
-            margin-top: 20px;
+    .container {
+        display: flex;
+        border: 0;
+        margin-top: 50px;
+        padding: 50px;
+    }
+
+    .section1, .section2 {
+        border: 2px groove #ccc;
+        background-color: #fff;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .username-info-description{
+        display: flex;
+    }
+
+    .username-pic {
+        display: flex;
+    }
+        
+    .username-info {
+        padding: 12px;
+    }
+
+    .username-label {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    hr {
+        opacity: 100%;
+        width: 100%;
+        border: 1;
+        border-top: 2px solid #000;
+        margin: 5px auto;
+    }
+
+    button {
+        background-color: #6ABA8C;
+        color: #fff;
+        width: 100%;
+        max-width: 15%;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
         }
 
-        /* Header Styles */
-        h4 {
-            color: #333;
-        }
+    .tab-pane {
+        display: none;
+    }
 
-        /* Sidebar Styles */
-        .account-settings-links {
-            background-color: #f8f9fa; /* Light gray background */
-        }
+    .tab-pane.active {
+        display: block;
+    }
 
-        .list-group-item {
-            cursor: pointer;
-            border: none;
-            border-radius: 0;
-        }
+    .form-group button{
+        float: right;
+    }
 
-        .list-group-item.active {
-            background-color: #007bff; /* Active link background color */
-            color: #fff;
-        }
+    .form-group {
+        padding: 1%;
+    }
 
-        /* Content Styles */
-        .card {
-            border: none;
-            border-radius: 0;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        /* Button Styles */
-        button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        /* File Input Styles */
-        input[type="file"] {
-            display: none; /* Hide the default file input */
-        }
-
-        /* Update the appearance of the custom file input button */
-        label[for="profile-photo"] {
-            background-color: #007bff;
-            color: #fff;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        /* Active Tab Styles */
-        .tab-pane {
-            display: none;
-        }
-
-        .tab-pane.active {
-            display: block;
-        }
     </style>
 </head>
-
 <body>
-    <div class="container light-style flex-grow-1 container-p-y">
-        <h4 class="font-weight-bold py-3 mb-4">
-            Account settings
-        </h4>
-        <div class="card overflow-hidden">
-            <div class="row no-gutters row-bordered row-border-light">
-                <div class="col-md-3 pt-0">
-                    <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action active" data-toggle="list"
-                            href="#account-general">Username</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-policy">Get Help</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-policy">Privacy Policy</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-policy">Sign out</a>
+
+    <div class="container">
+        <div class="section1">
+            <div class="username-info">
+                <div class="username-pic">
+                    <img src="profile photo icon.png" height="70" width="70">
+                    <div class="user">
+                        <span class="username-label"><b>Username</b></span>
+                        <label id="email"><b>username@example.com</b></label>
                     </div>
                 </div>
-                <div class="col-md-9">
-                    <div class="tab-content">
-                        <div class="tab-pane fade active show" id="account-general">
-                            <div class="card-body media align-items-center">
-                                <!-- Removed the photo -->
-                                <div class="form-group">
-                                    <label class="form-label">Upload Profile Photo</label>
-                                    <input type="file" name="profile-photo">
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label class="form-label">Name</label>
-                                    <p><b>Vinz Bleik Ibay</b></p>
-                                    <button type="button">Edit</button>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">E-mail Address</label>
-                                    <p id="email"><b>username@example.com</b></p>
-                                    <button type="button">Edit</button>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Password</label>
-                                    <p><b>********</b></p>
-                                    <button type="button">Update</button>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Delete Account</label>
-                                    <button type="button">Delete</button>
-                                </div>
-                            </div>
+            </div>
+            <div class="list-group list-group-flush account-settings-links">
+                <a class="list-group-item list-group-item-action active" data-toggle="list"
+                    href="#account-general">Account Settings</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list"
+                    href="#account-policy">Get Help</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list"
+                    href="#account-policy">Privacy Policy</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list"
+                    href="#account-policy">Sign out</a>
+            </div>
+        </div>
+
+        <div class="section2">
+            <div class="tab-content">
+                <div class="tab-pane fade active show" id="account-general">
+                    <div class="card-body media align-items-center">
+                        <div class="form-group">
+                            <label class="form-label label-upload-photo">Update Profile Photo</label>
+                            <input type="file" name="profile-photo">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">Name</label>
+                            <button type="button">Edit</button>
+                            <p><b>Juan Dela Cruz</b></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">E-mail Address</label>
+                            <button type="button">Edit</button>
+                            <p id="email"><b>username@example.com</b></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <button type="button">Update</button>
+                            <p><b>********</b></p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Delete Account?</label>
+                            <button type="button">Delete</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript">
-        // Assuming you have a JavaScript variable 'username' and 'email'
-        var email = "username@example.com"; // Replace "username@example.com" with your actual email variable
 
-        // Update the content of the 'email' element
-        document.getElementById("email").innerHTML = '<b>' + email + '</b>';
+    <script>
+        // JavaScript to toggle visibility of Section 2
+        document.querySelector('.account-settings-btn').addEventListener('click', function() {
+            document.querySelector('.section2').style.display = 'block';
+        });
     </script>
-</body>
 
+</body>
 </html>
