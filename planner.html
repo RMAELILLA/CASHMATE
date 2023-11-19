@@ -7,50 +7,129 @@
     <style>
         /* Add your styling here */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Lexend', sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
         div {
             margin-bottom: 20px;
         }
+
+        .planner-header {
+            background-color: #328f8a;
+            padding: 10px;
+            background: rgb(245, 245, 245);
+            background: linear-gradient(176deg, #C8F0C2 0%, #98CF96 94%);
+        }
+
+        .planner-nav {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        .planner-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .planner-nav li {
+            margin-right: 10px;
+        }
+
+        .planner-nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .plan-retirement {
+            display: flex;
+            justify-content: space-between;
+            border: 0;
+        }
+
+        .retirement {
+            flex: 1;
+            border: 2px groove #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .deposit-hist {
+            flex: 1;
+            margin-left: 10px;
+            border: 2px groove #ccc;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+
         hr {
             border: 1px solid #ddd;
         }
+
+        .deposit-btn {
+            margin: 10px;
+        }
+
+        button {
+            background-color: #6ABA8C;
+            color: #fff;
+            width: 100%;
+            max-width: 15%;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
+<div class="container">
+    <div class="planner-header">
+        <!-- Save for the Future Header -->
+        <h1>Save for the Future</h1>
+        <div class="planner-nav">
+            <!-- Navigation Choices -->
+            <ul>
+                <li><a href="#" onclick="showRetirement()">Retirement</a></li>
+                <li><a href="#">Vehicle</a></li>
+                <li><a href="#">House and Lot</a></li>
+                <li><a href="#">+ Add New Plan</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="plan-retirement">
+        <!-- Retirement Content -->
+        <div class="retirement">
+            <h3>Retirement</h3>
+            <p>Total Deposit: <!-- base on user total amount of deposit --></p>
+            <p>Target: <!-- user input their target plan/amount --></p>
 
-<!-- Save for the Future Header -->
-<h1>Save for the Future</h1>
-
-<!-- Navigation Choices -->
-<ul>
-    <li><a href="#" onclick="showRetirement()">Retirement</a></li>
-    <li><a href="#">Vehicle</a></li>
-    <li><a href="#">House and Lot</a></li>
-    <li><a href="#">+ Add New Plan</a></li>
-</ul>
-
-<!-- Retirement Content -->
-<div class="retirement">
-    <h3>Retirement</h3>
-    <p>Total Deposit: <!-- base on user total amount of deposit --></p>
-    <p>Target: <!-- user input their target plan/amount --></p>
-
-    <p>Monthly Deposit: <!-- divide the total amount of target based on their desired year of retirement --></p>
-    <p>Target Year: <!-- user input their target year --></p>
-
+            <p>Monthly Deposit: <!-- divide the total amount of target based on their desired year of retirement --></p>
+            <p>Target Year: <!-- user input their target year --></p>
+        </div>
+        <div class="deposit-hist">
+            <!-- Deposit History -->
+            <h3>Deposit History</h3>
+            <hr>
+            <p>Deposit</p>
+            <p>Amount</p>
+            <p>Month of Deposit</p>
+        </div>
+    </div>
     <div class="deposit-btn">
         <!-- Deposit button -->
         <button onclick="deposit()">Deposit</button>
-    </div>
-
-    <div class="deposit-hist">
-        <!-- Deposit History -->
-        <h3>Deposit History</h3>
-        <hr>
-        <p>Deposit</p>
-        <p>Amount</p>
-        <p>Month of Deposit</p>
     </div>
 </div>
 
