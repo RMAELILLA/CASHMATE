@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save for the Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
     <style>
         /* Add your styling here */
         body {
@@ -12,20 +13,18 @@
             padding: 0;
         }
 
-        div {
-            margin-bottom: 20px;
-        }
-
         .planner-header {
             background-color: #328f8a;
             padding: 10px;
+            padding-left: 10%;
             background: rgb(245, 245, 245);
-            background: linear-gradient(176deg, #C8F0C2 0%, #98CF96 94%);
+            background: linear-gradient(176deg, #C8F0C2 0%, #82be80 94%);
         }
 
         .planner-nav {
             display: flex;
             border-bottom: 1px solid #ddd;
+            width: 40%;
             padding-bottom: 10px;
         }
 
@@ -42,8 +41,15 @@
 
         .planner-nav a {
             text-decoration: none;
-            color: #333;
-            font-size: 12px;
+            color: #80947F;
+            font-size: 13px;
+            font-weight: 1;
+            margin: 10px;
+            word-spacing: 5px;
+        }
+
+        .planner-nav li:hover a {
+            color: black;
             font-weight: bold;
         }
 
@@ -53,6 +59,11 @@
             border: 0;
         }
 
+        .container {
+            padding: 20%;
+            padding-top: 0;
+        }
+
         .retirement {
             flex: 1;
             border: 2px groove #ccc;
@@ -60,6 +71,28 @@
             border-radius: 10px;
             padding: 10px;
             margin: 10px;
+        }
+
+        .target {
+            display: inline-flex;
+            margin-left: 20%;
+        }
+
+        .progress-bar-container {
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #6ABA8C;
+            width: 10%; /* Update the width dynamically based on the progress */
         }
 
         .deposit-hist {
@@ -74,6 +107,12 @@
 
         hr {
             border: 1px solid #ddd;
+        }
+
+        .deposit-info {
+            margin: 5%;
+            margin-top: 0;
+            font-size: 12px;
         }
 
         .deposit-btn {
@@ -94,44 +133,58 @@
     </style>
 </head>
 <body>
-<div class="container">
+<div class="planner">
     <div class="planner-header">
         <!-- Save for the Future Header -->
-        <h1>Save for the Future</h1>
+        <h1><b>Save for the Future</b></h1>
         <div class="planner-nav">
             <!-- Navigation Choices -->
             <ul>
                 <li><a href="#" onclick="showRetirement()">Retirement</a></li>
                 <li><a href="#">Vehicle</a></li>
                 <li><a href="#">House and Lot</a></li>
-                <li><a href="#">+ Add New Plan</a></li>
+                <li><a href="#">+ add new plan</a></li>
             </ul>
         </div>
     </div>
-    <div class="plan-retirement">
-        <!-- Retirement Content -->
-        <div class="retirement">
-            <h3>Retirement</h3>
-            <p>Total Deposit: <!-- base on user total amount of deposit --></p>
-            <p>Target: <!-- user input their target plan/amount --></p>
-
-            <p>Monthly Deposit: <!-- divide the total amount of target based on their desired year of retirement --></p>
-            <p>Target Year: <!-- user input their target year --></p>
+    <div class="container">
+        <div class="plan-retirement">
+            <!-- Retirement Content -->
+            <div class="retirement">
+                <h3>Retirement</h3>
+                <p>P2,000,000 <span class="target">Target: P30,000,000.00</span></p>
+                <!-- Progress bar container -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                </div>
+                <div>
+                    <p>Monthly Deposit:</p>
+                        <!-- divide the total amount of target based on their desired year of retirement -->
+                    <span style="margin-left: 20px;">P50,000.00</span>
+                    <p>Target Year:</p>
+                        <!-- user input their target year -->
+                        <span style="margin-left: 20px;">2076</span>
+                </div>
+            </div>
+            <div class="deposit-hist">
+                <!-- Deposit History -->
+                <h3>Deposit History</h3>
+                <hr>
+                <div class="deposit-info">
+                    <!-- Display changes made by the user -->
+                    <p>Deposit <span style="margin-left: 50%; font-size: 20px;"><b>P50,000.00</b></span></p>
+                    <!-- Display the month of user deposit -->
+                    <p>November</p>
+                </div>
+            </div>
         </div>
-        <div class="deposit-hist">
-            <!-- Deposit History -->
-            <h3>Deposit History</h3>
-            <hr>
-            <p>Deposit</p>
-            <p>Amount</p>
-            <p>Month of Deposit</p>
+        <div class="deposit-btn">
+            <!-- Deposit button -->
+            <button onclick="deposit()">Deposit</button>
         </div>
-    </div>
-    <div class="deposit-btn">
-        <!-- Deposit button -->
-        <button onclick="deposit()">Deposit</button>
     </div>
 </div>
-
 </body>
 </html>
