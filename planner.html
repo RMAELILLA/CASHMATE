@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save for the Future</title>
+    <style>
+        /* Add your styling here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        div {
+            margin-bottom: 20px;
+        }
+        hr {
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Save for the Future Header -->
+<h1>Save for the Future</h1>
+
+<!-- Navigation Choices -->
+<ul>
+    <li><a href="#" onclick="showRetirement()">Retirement</a></li>
+    <li><a href="#">Vehicle</a></li>
+    <li><a href="#">House and Lot</a></li>
+    <li><a href="#">+ Add New Plan</a></li>
+</ul>
+
+<!-- Retirement Content -->
+<div class="retirement">
+    <h3>Retirement</h3>
+    <p>Total Deposit: <!-- base on user total amount of deposit --></p>
+    <p>Target: <!-- user input their target plan/amount --></p>
+
+    <p>Monthly Deposit: <!-- divide the total amount of target based on their desired year of retirement --></p>
+    <p>Target Year: <!-- user input their target year --></p>
+
+    <div class="deposit-btn">
+        <!-- Deposit button -->
+        <button onclick="deposit()">Deposit</button>
+    </div>
+
+    <div class="deposit-hist">
+        <!-- Deposit History -->
+        <h3>Deposit History</h3>
+        <hr>
+        <p>Deposit</p>
+        <p>Amount</p>
+        <p>Month of Deposit</p>
+    </div>
+</div>
+
+</body>
+</html>
