@@ -6,7 +6,6 @@
     <title>Save for the Future</title>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
     <style>
-        /* Add your styling here */
         body {
             font-family: 'Lexend', sans-serif;
             margin: 0;
@@ -43,7 +42,7 @@
             text-decoration: none;
             color: #80947F;
             font-size: 13px;
-            font-weight: 1;
+            font-weight: bold;
             margin: 10px;
             word-spacing: 5px;
         }
@@ -71,6 +70,15 @@
             border-radius: 10px;
             padding: 10px;
             margin: 10px;
+            position: relative;
+        }
+
+        .retirement img {
+            position: relative;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: auto;
         }
 
         .target {
@@ -92,7 +100,7 @@
         .progress-bar-fill {
             height: 100%;
             background-color: #6ABA8C;
-            width: 10%; /* Update the width dynamically based on the progress */
+            width: 10%;
         }
 
         .deposit-hist {
@@ -111,8 +119,17 @@
 
         .deposit-info {
             margin: 5%;
-            margin-top: 0;
             font-size: 12px;
+        }
+
+        .deposit-info p {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .deposit-info p span {
+            font-weight: bold;
         }
 
         .deposit-btn {
@@ -130,13 +147,18 @@
             cursor: pointer;
         }
 
+        /* Adjusted font size for P50,000.00 */
+        .deposit-info p span.big {
+            font-size: 20px;
+        }
+
     </style>
 </head>
 <body>
 <div class="planner">
     <div class="planner-header">
         <!-- Save for the Future Header -->
-        <h1><b>Save for the Future</b></h1>
+        <h1><b>Save for the future.</b></h1>
         <div class="planner-nav">
             <!-- Navigation Choices -->
             <ul>
@@ -151,6 +173,7 @@
         <div class="plan-retirement">
             <!-- Retirement Content -->
             <div class="retirement">
+                <img src="retirement-icon.jpg" alt="Retirement Icon">
                 <h3>Retirement</h3>
                 <p>P2,000,000 <span class="target">Target: P30,000,000.00</span></p>
                 <!-- Progress bar container -->
@@ -161,11 +184,9 @@
                 </div>
                 <div>
                     <p>Monthly Deposit:</p>
-                        <!-- divide the total amount of target based on their desired year of retirement -->
-                    <span style="margin-left: 20px;">P50,000.00</span>
+                    <span class="big" style="margin-left: 20px;">P50,000.00</span>
                     <p>Target Year:</p>
-                        <!-- user input their target year -->
-                        <span style="margin-left: 20px;">2076</span>
+                    <span style="margin-left: 20px;">2076</span>
                 </div>
             </div>
             <div class="deposit-hist">
@@ -174,9 +195,9 @@
                 <hr>
                 <div class="deposit-info">
                     <!-- Display changes made by the user -->
-                    <p>Deposit <span style="margin-left: 50%; font-size: 20px;"><b>P50,000.00</b></span></p>
+                    <p><span>Deposit</span><span class="big">P50,000.00</span></p>
                     <!-- Display the month of user deposit -->
-                    <p>November</p>
+                    <p><span>November</span></p>
                 </div>
             </div>
         </div>
