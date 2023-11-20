@@ -63,6 +63,10 @@
             padding-top: 0;
         }
 
+        .retire {
+            flex: 1;
+        }
+
         .retirement {
             flex: 1;
             border: 2px groove #ccc;
@@ -87,7 +91,7 @@
 
         .target {
             display: inline-flex;
-            margin-left: 20%;
+            margin-left: 25%;
         }
 
         .progress-bar-container {
@@ -107,8 +111,25 @@
             width: 10%;
         }
 
+        .deposit-btn {
+            margin: 10px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #6ABA8C;
+            color: #fff;
+            width: 100%;
+            max-width: 50%;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
         .deposit-hist {
-            flex: 1;
+            flex: 1.2;
+            height: 1.2;
             margin-left: 10px;
             border: 2px groove #ccc;
             background-color: #fff;
@@ -118,7 +139,7 @@
         }
 
         hr {
-            border: 1px solid #ddd;
+            border: 1px solid #2e2d2d;
         }
 
         .deposit-info {
@@ -136,24 +157,10 @@
             font-weight: bold;
         }
 
-        .deposit-btn {
-            margin: 10px;
-        }
-
-        button {
-            background-color: #6ABA8C;
-            color: #fff;
-            width: 100%;
-            max-width: 15%;
-            padding: 10px 10px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
         /* Adjusted font size for P50,000.00 */
         .deposit-info p span.big {
             font-size: 20px;
+            font-weight: bolder;
         }
 
     </style>
@@ -176,23 +183,29 @@
     <div class="container">
         <div class="plan-retirement">
             <!-- Retirement Content -->
-            <div class="retirement">
-                <img src="retirement-icon.jpg" alt="Retirement Icon">
-                <div class="retirement-info">
-                    <h3>Retirement</h3>
-                </div>
-                <p>P2,000,000 <span class="target">Target: P30,000,000.00</span></p>
-                <!-- Progress bar container -->
-                <div class="progress-bar-container">
-                    <div class="progress-bar">
-                        <div class="progress-bar-fill"></div>
+            <div class="retire">
+                <div class="retirement">
+                    <img src="retirement-icon.jpg" alt="Retirement Icon">
+                    <div class="retirement-info">
+                        <h3>Retirement</h3>
+                    </div>
+                    <div style="font-size: small;"><p><b>P2,000,000</b><span class="target">Target: P30,000,000.00</span></p></div>
+                    <!-- Progress bar container -->
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill"></div>
+                        </div>
+                    </div>
+                    <div style="font-size: small; font-weight: bold; margin-left: 20px;">
+                        <p>Monthly Deposit:</p>
+                        <span class="big" style="margin-left: 20px;">P50,000.00</span>
+                        <p>Target Year:</p>
+                        <span style="margin-left: 20px;">2076</span>
                     </div>
                 </div>
-                <div>
-                    <p>Monthly Deposit:</p>
-                    <span class="big" style="margin-left: 20px;">P50,000.00</span>
-                    <p>Target Year:</p>
-                    <span style="margin-left: 20px;">2076</span>
+                <div class="deposit-btn">
+                    <!-- Deposit button -->
+                    <button onclick="deposit()">Deposit Now</button>
                 </div>
             </div>
             <div class="deposit-hist">
@@ -201,15 +214,11 @@
                 <hr>
                 <div class="deposit-info">
                     <!-- Display changes made by the user -->
-                    <p><span>Deposit</span><span class="big">P50,000.00</span></p>
+                    <p><span style="font-size: medium; font-weight: bolder;">Deposit</span><span class="big">P50,000.00</span></p>
                     <!-- Display the month of user deposit -->
                     <p><span>November</span></p>
                 </div>
             </div>
-        </div>
-        <div class="deposit-btn">
-            <!-- Deposit button -->
-            <button onclick="deposit()">Deposit</button>
         </div>
     </div>
 </div>
